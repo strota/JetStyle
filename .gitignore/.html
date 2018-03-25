@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>Записная книга</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="index.js"> </script>
+    </head>
+    <body>
+        <form name="idform">
+            <input id='del' type="text" name="id" required placeholder="Имя" class="form_input_text">
+            <input type="text" name="id2" required placeholder="Фамилия" class="form_input_text">
+            <input type="text" name="id3" required placeholder="Номер" class="form_input_text">
+            <input type="button" value="Сохранить контакт" onclick="go()" class="form_input">
+        </form>
+        <div id="r"></div>
+        <script type="text/javascript">
+            function go() {
+                var line = $("#r").html();
+                if (line != '') {
+                    line = line.substring(0, line.length - 6);
+                    line = line.substring(5, line.length);
+                    var array = [];
+                    var arrays = line.split('</div><div c');
+                    for (var i = 0; i < arrays.length; i++) {
+                        var element = arrays[i].split('>')
+                        array.push(element[4].split('<')[0] + ' ' + element[7].split('<')[0]);
+                    }
+                }
+                else {
+                    var array = [];
+                }
+                var elevent = document.forms["idform"].elements["id"].value;
+                if (elevent == '') {
+                    alert('Вы не ввели имя контакта');
+                    return;
+                }
+                var first_elevent = document.forms["idform"].elements["id2"].value;
+                if (first_elevent == '') {
+                    alert('Вы не ввели фамилию контакта');
+                    return;
+                }
+                var second_elevent = document.forms["idform"].elements["id3"].value;
+                if (second_elevent == '') {
+                    alert('Вы не ввели номер контакта');
+                    return;
+                }
+                document.forms["idform"].elements["id"].value = '';
+                document.forms["idform"].elements["id2"].value = '';
+                document.forms["idform"].elements["id3"].value = '';
+                var now_contact = elevent + ' ' + first_elevent + ' ' + second_elevent;
+                for (var i = 0; i < array.length; i++) {
+                    var element = (array[i].split(' '));
+                    if (element[element.length - 1] === second_elevent) {
+                        alert('Контакт с таким номером уже существует');
+                        return;
+                    }
+                }
+                array.push(elevent + ' ' + first_elevent + ' ' + second_elevent);
+                array = array.sort();
+                final(array);
+            }
+            function final(array) {
+                var final_elements = '';
+                for (var i = 0; i < array.length; i++) {
+                    var class_BEM = array[i].split(' ');
+                    class_BEM = class_BEM.join('_')
+                    var telephone = separation(array[i]);
+                    var name = telephone[0];
+                    telephone = telephone[1];
+                    var span_block = span_func(name);
+                    final_elements += '<div class="basic ' + class_BEM +'"><span class="span_block">' + 
+                        span_block + '</span><div class="span_name" data-title="' + name + '">' + name + '</div><div id="a"><a href=”tel:'
+                         + telephone + '”>' + telephone + '</a></div>' + 
+                        '<input type="button" class="remove_button" value="Удалить контакт" id="' + 
+                        class_BEM + '" onclick="this.parentNode.remove(this);"></div>';
+                }
+                $("#r").html(final_elements);
+            }
+            function separation(line) {
+                var new_line = line.split(' ');
+                telephone = new_line[new_line.length - 1];
+                new_line.pop();
+                new_line = new_line.join(' ');
+                return [new_line, telephone];
+            }
+            function span_func(name) {
+                var element_array = name.split(' ');
+                var span_block = '';
+                for (var i = 0; i < element_array.length; i++) {
+                    if (element_array[i] != '') {
+                        span_block += element_array[i].substring(0, 1) + '.';
+                    }
+                }
+                return span_block;
+            }
+        </script>
+    </body>
+</html>
