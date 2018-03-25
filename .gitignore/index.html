@@ -56,8 +56,24 @@
                     }
                 }
                 array.push(elevent + ' ' + first_elevent + ' ' + second_elevent);
-                array = array.sort();
+                array = sort(array);
+                // array = array.sort();
                 final(array);
+            }
+            function sort(array) {
+                var arrays = [];
+                for (var i = 0; i < array.length; i++) {
+                    var line = array[i].split(' ');
+                    var supername = line[1];
+                    var new_line = line[0] + ' ' + line[2];
+                    arrays.push(supername + ' ' + new_line)
+                }
+                arrays.sort();
+                for (var i = 0; i < arrays.length; i++) {
+                    var line = arrays[i].split(' ');
+                    arrays[i] = line[1] + ' ' + line[0] + ' ' + line[2];
+                }
+                return arrays;
             }
             function final(array) {
                 var final_elements = '';
