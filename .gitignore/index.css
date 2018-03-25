@@ -1,0 +1,573 @@
+body
+{
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+#r > div
+{
+    margin-bottom: 6px;
+}
+
+.span_block, .span_name, #a
+{
+    vertical-align: top;
+    display: inline-block;
+}
+
+.span_block
+{
+    background: rgb(185, 181, 181);
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.form_input, .remove_button
+{
+    background: rgb(185, 181, 181);
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.form_input
+{
+    width: 200px;
+    height: 30px;
+}
+
+.remove_button
+{
+    width: 170px;
+    height: 25px;
+}
+
+.form_input_text
+{
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+a
+{
+    text-decoration: none;
+    color: black;
+}
+
+.span_name
+{
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#a
+{
+    width: 200px;
+}
+
+.span_name:hover::after
+{ 
+    content: attr(data-title);
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    background: rgba(255,255,230,0.9);
+    font-size: 15px;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    white-space: normal;
+}
+
+@media only screen and (max-width: 1100px)
+{
+    body
+    {
+        font-size: 15px;
+    }
+    
+    .form_input, .remove_button, .form_input_text
+    {
+        font-size: 13px;
+    }
+
+    .form_input
+    {
+        width: 150px;
+        height: 25px;
+    }
+
+    .remove_button
+    {
+        width: 130px;
+        height: 20px;
+    }
+
+    .form_input_text
+    {
+        width: 130px;
+        height: 25px;
+    }
+
+    .span_name
+    {
+        width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #a
+    {
+        width: 150px;
+    }
+
+    .span_name:hover::after
+    { 
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 700px)
+{
+    body
+    {
+        font-size: 10px;
+    }
+
+    .form_input, .remove_button, .form_input_text
+    {
+        font-size: 10px;
+    }
+
+    .form_input
+    {
+        width: 130px;
+        height: 20px;
+    }
+
+    .remove_button
+    {
+        width: 110px;
+        height: 20px;
+    }
+
+    .form_input_text
+    {
+        width: 100px;
+        height: 20px;
+    }
+
+    .span_name
+    {
+        width: 170px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #a
+    {
+        width: 100px;
+    }
+
+    .span_name:hover::after
+    { 
+        font-size: 10px;
+    }
+
+    #r > div
+    {
+        margin-bottom: 5px;
+    }
+}
+
+@media only screen and (max-width: 600px)
+{
+    body
+    {
+        font-size: 7px;
+    }
+
+    .form_input, .remove_button, .form_input_text
+    {
+        font-size: 7px;
+    }
+
+    .form_input
+    {
+        width: 90px;
+        height: 15px;
+    }
+
+    .remove_button
+    {
+        width: 70px;
+        height: 15px;
+    }
+
+    .form_input_text
+    {
+        width: 80px;
+        height: 15px;
+    }
+
+    .span_name
+    {
+        width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #a
+    {
+        width: 90px;
+    }
+
+    .span_block, .form_input, .remove_button, .form_input_text
+    {
+        border-radius: 18px;
+    }
+
+    .span_name:hover::after
+    { 
+        font-size: 7px;
+    }
+
+    #r > div
+    {
+        margin-bottom: 4px;
+    }
+}
+
+@media only screen and (max-width: 400px)
+{
+    body
+    {
+        font-size: 4px;
+    }
+
+    .form_input, .remove_button, .form_input_text
+    {
+        font-size: 4px;
+    }
+
+    .form_input
+    {
+        width: 60px;
+        height: 10px;
+    }
+
+    .remove_button
+    {
+        width: 50px;
+        height: 10px;
+    }
+
+    .form_input_text
+    {
+        width: 50px;
+        height: 10px;
+    }
+
+    .span_name
+    {
+        width: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #a
+    {
+        width: 60px;
+    }
+
+    .span_block
+    {
+        margin-right: 3px;
+    }
+
+    .span_block, .form_input, .remove_button, .form_input_text
+    {
+        border-radius: 3px;
+    }
+
+    .span_name:hover::after
+    { 
+        font-size: 4px;
+    }
+
+    #r > div
+    {
+        margin-bottom: 3px;
+    }
+}
+
+@media only screen and (min-width: 1600px)
+{
+    body
+    {
+        font-size: 25px;
+    }
+
+    .form_input, .remove_button, .form_input_text
+    {
+        font-size: 23px;
+    }
+
+    .form_input
+    {
+        width: 300px;
+        height: 35px;
+    }
+
+    .remove_button
+    {
+        width: 250px;
+        height: 30px;
+    }
+
+    .form_input_text
+    {
+        width: 250px;
+        height: 35px;
+    }
+
+    .span_name
+    {
+        width: 400px;
+    }
+
+    #a
+    {
+        width: 300px;
+    }
+
+    .span_name:hover::after
+    { 
+        font-size: 25px;
+    }
+
+    #r > div
+    {
+        margin-bottom: 7px;
+    }
+}
+
+@media only screen and (min-width: 1900px)
+{
+    body
+    {
+        font-size: 35px;
+    }
+
+    .form_input, .remove_button, .form_input_text
+    {
+        font-size: 33px;
+    }
+
+    .form_input
+    {
+        width: 350px;
+        height: 45px;
+    }
+
+    .remove_button
+    {
+        width: 300px;
+        height: 40px;
+    }
+
+    .form_input_text
+    {
+        width: 300px;
+        height: 45px;
+    }
+
+    .span_name
+    {
+        width: 450px;
+    }
+
+    #a
+    {
+        width: 350px;
+    }
+
+    .span_name:hover::after
+    { 
+        font-size: 35px;
+    }
+
+    #r > div
+    {
+        margin-bottom: 8px;
+    }
+}
+
+@media only screen and (min-width: 2100px)
+{
+    body
+    {
+        font-size: 45px;
+    }
+    
+    .form_input, .remove_button, .form_input_text
+    {
+        font-size: 43px;
+    }
+
+    .form_input
+    {
+        width: 400px;
+        height: 55px;
+    }
+
+    .remove_button
+    {
+        width: 400px;
+        height: 50px;
+    }
+
+    .form_input_text
+    {
+        width: 400px;
+        height: 55px;
+    }
+
+    .span_name
+    {
+        width: 550px;
+    }
+
+    #a
+    {
+        width: 450px;
+    }
+
+    .span_name:hover::after
+    { 
+        font-size: 45px;
+    }
+
+    #r > div
+    {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 3000px)
+{
+    body
+    {
+        font-size: 55px;
+    }
+
+    .form_input, .remove_button, .form_input_text
+    {
+        font-size: 53px;
+    }
+
+    .form_input
+    {
+        width: 600px;
+        height: 75px;
+    }
+
+    .remove_button
+    {
+        width: 600px;
+        height: 70px;
+    }
+
+    .form_input_text
+    {
+        width: 600px;
+        height: 75px;
+    }
+
+    .span_name
+    {
+        width: 750px;
+    }
+
+    #a
+    {
+        width: 650px;
+    }
+
+    .span_block, .form_input, .remove_button, .form_input_text
+    {
+        border-radius: 18px;
+    }
+
+    .span_name:hover::after
+    { 
+        font-size: 55px;
+    }
+
+    #r > div
+    {
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 4200px)
+{
+    body
+    {
+        font-size: 65px;
+    }
+
+    .form_input, .remove_button, .form_input_text
+    {
+        font-size: 63px;
+    }
+
+    .form_input
+    {
+        width: 800px;
+        height: 95px;
+    }
+
+    .remove_button
+    {
+        width: 800px;
+        height: 90px;
+    }
+
+    .form_input_text
+    {
+        width: 800px;
+        height: 95px;
+    }
+
+    .span_name
+    {
+        width: 950px;
+    }
+
+    #a
+    {
+        width: 850px;
+    }
+
+    .span_block, .form_input, .remove_button, .form_input_text
+    {
+        border-radius: 28px;
+    }
+
+    .span_name:hover::after
+    { 
+        font-size: 65px;
+    }
+
+    #r > div
+    {
+        margin-bottom: 10px;
+    }
+}
